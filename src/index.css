@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Nexlance Professional Dark Theme */
+    --background: 222 47% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 45% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 45% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon Cyan Primary */
+    --primary: 187 100% 50%;
+    --primary-foreground: 220 45% 6%;
+    
+    /* Pink Accent */
+    --secondary: 340 100% 64%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 30% 20%;
+    --muted-foreground: 215 25% 65%;
+
+    /* Blue Secondary */
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 15%;
+    --input: 215 25% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 1rem;
+
+    /* Custom Nexlance Colors */
+    --glow-cyan: 187 100% 50%;
+    --glow-pink: 340 100% 64%;
+    --text-muted: 215 30% 70%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(187 100% 50%), hsl(217 91% 60%));
+    --gradient-glow: linear-gradient(180deg, hsl(187 100% 50% / 0.2), hsl(340 100% 64% / 0.2));
+    
+    /* Shadows & Glows */
+    --glow-sm: 0 0 20px hsl(187 100% 50% / 0.4);
+    --glow-md: 0 0 40px hsl(187 100% 50% / 0.5);
+    --glow-lg: 0 0 60px hsl(187 100% 50% / 0.6);
+    --glow-pink: 0 0 40px hsl(340 100% 64% / 0.5);
+    
+    /* Animations */
+    --ease-power4: cubic-bezier(0.76, 0, 0.24, 1);
+    --transition-smooth: all 0.6s var(--ease-power4);
+  }
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+  
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  
+  .subhead {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .numeric {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  /* Glow Effects */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.6), 
+                 0 0 40px hsl(var(--glow-cyan) / 0.4);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.4),
+                inset 0 0 20px hsl(var(--glow-cyan) / 0.1);
+  }
+  
+  .glow-pink-border {
+    box-shadow: 0 0 20px hsl(var(--glow-pink) / 0.4),
+                inset 0 0 20px hsl(var(--glow-pink) / 0.1);
+  }
+  
+  /* Professional Glassmorphism */
+  .glass {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.5), hsl(var(--card) / 0.3));
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Smooth Scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  /* 3D Transform Utilities */
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .perspective {
+    perspective: 1000px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
