@@ -317,7 +317,7 @@ const Index = () => {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              Contact: <a href="mailto:team@nexlance.com" className="text-primary hover:underline">team@nexlance.com</a>
+              Contact: <a href="mailto:contact@nexlance" className="text-primary hover:underline">contactnexlance@gmail.com</a>
             </p>
           </motion.div>
         </div>
